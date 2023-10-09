@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+protocol RemoteDataSourceProtocol {
+    
+    func searchGifs(page:Int,pageSize:Int,query: String, completion: @escaping Handler<GiphyResponse>)
+    func trending(page:Int,pageSize:Int, completion: @escaping Handler<GiphyResponse>)
+}

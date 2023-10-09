@@ -7,7 +7,25 @@
 		<key>task.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>7</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>563849DE2AD2EB6B008C0E6E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>563849F42AD2EB70008C0E6E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>563849FE2AD2EB70008C0E6E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

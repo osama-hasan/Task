@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+typealias Handler<T> = (Result<T, ErrorModel>) -> Void
+
+protocol DataSourceProtocol:RemoteDataSourceProtocol,LocalDataSourceProtocol {
+}

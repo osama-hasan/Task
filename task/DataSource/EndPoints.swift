@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+enum EndPoints:String{
+    case search = "/search"
+    case trending = "/trending"
+}

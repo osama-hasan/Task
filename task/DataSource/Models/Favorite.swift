@@ -6,3 +6,15 @@
 //
 
 import Foundation
+import RealmSwift
+
+class Favorite: Object {
+    @Persisted var favId: String = ""
+    @Persisted var title: String = ""
+    @Persisted var url: String = ""
+    
+    
+    @Persisted var user = LinkingObjects(fromType: User.self, property: "favorites")
+
+    
+}
