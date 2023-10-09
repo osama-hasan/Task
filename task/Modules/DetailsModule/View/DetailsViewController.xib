@@ -25,11 +25,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Jn-vL-PwJ">
-                    <rect key="frame" x="8" y="71" width="377" height="300"/>
+                    <rect key="frame" x="8" y="71" width="377" height="281"/>
                     <color key="backgroundColor" red="0.574681862113402" green="0.574681862113402" blue="0.574681862113402" alpha="0.34850659013605439" colorSpace="custom" customColorSpace="displayP3"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="300" id="ZbX-jj-f53"/>
-                    </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Agz-iH-ZOD">
                     <rect key="frame" x="338" y="79" width="35" height="35"/>
@@ -46,13 +43,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIx-l1-0nc">
-                    <rect key="frame" x="20" y="383" width="353" height="0.0"/>
+                    <rect key="frame" x="20" y="364" width="353" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <color key="textColor" name="Primary-Color"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcD-h7-1E2">
-                    <rect key="frame" x="20" y="391" width="353" height="0.0"/>
+                    <rect key="frame" x="20" y="372" width="353" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" name="Grey-500"/>
                     <nil key="highlightedColor"/>
@@ -64,6 +61,7 @@
                 <constraint firstItem="HcD-h7-1E2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7DK-Hg-vw8"/>
                 <constraint firstItem="TIx-l1-0nc" firstAttribute="top" secondItem="5Jn-vL-PwJ" secondAttribute="bottom" constant="12" id="7WF-4V-TKH"/>
                 <constraint firstItem="TIx-l1-0nc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="BpW-RC-b6i"/>
+                <constraint firstItem="5Jn-vL-PwJ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.33" id="FfK-WQ-xvC"/>
                 <constraint firstItem="5Jn-vL-PwJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="RTo-R8-V5J"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HcD-h7-1E2" secondAttribute="trailing" constant="20" id="UeL-1J-IEP"/>
                 <constraint firstItem="5Jn-vL-PwJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="Ulv-WF-6b9"/>
