@@ -76,10 +76,18 @@ extension FavouriteViewController : UICollectionViewDelegate , UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = collectionView.frame.width / 2 - 8
-        let hight =  collectionView.frame.width / 2 - 8
+        let isIpad = UIDevice.current.userInterfaceIdiom == .pad
         
-        return CGSize(width: width, height: hight)
+        if isIpad {
+            let width = collectionView.frame.width / 4 - 8
+            let hight =  collectionView.frame.width / 4 - 8
+            return CGSize(width: width, height: hight)
+        } else {
+            // For iPhone, 2 columns
+            let width = collectionView.frame.width / 2 - 8
+            let hight =  collectionView.frame.width / 2 - 8
+            return CGSize(width: width, height: hight)
+        }
         
     }
     
