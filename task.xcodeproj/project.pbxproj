@@ -211,13 +211,11 @@
 		563849E12AD2EB6B008C0E6E /* task */ = {
 			isa = PBXGroup;
 			children = (
+				75A0864E2AD4148000C51D5E /* Resources */,
 				56384A3F2AD2F868008C0E6E /* Application */,
 				56384A262AD2F2C4008C0E6E /* Common */,
 				56384A1C2AD2EC87008C0E6E /* Modules */,
 				56384A1B2AD2EC7B008C0E6E /* DataSource */,
-				563849EB2AD2EB6F008C0E6E /* Assets.xcassets */,
-				563849ED2AD2EB6F008C0E6E /* LaunchScreen.storyboard */,
-				563849F02AD2EB6F008C0E6E /* Info.plist */,
 			);
 			path = task;
 			sourceTree = "<group>";
@@ -536,6 +534,16 @@
 				75A0864C2AD4044100C51D5E /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		75A0864E2AD4148000C51D5E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				563849EB2AD2EB6F008C0E6E /* Assets.xcassets */,
+				563849ED2AD2EB6F008C0E6E /* LaunchScreen.storyboard */,
+				563849F02AD2EB6F008C0E6E /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
