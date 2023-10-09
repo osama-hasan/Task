@@ -27,7 +27,7 @@ class FavouriteViewController: UIViewController {
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationItem.largeTitleDisplayMode = .always
-        
+        viewModelListeners()
     }
     
     func setupViews(){

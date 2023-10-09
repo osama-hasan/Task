@@ -19,6 +19,7 @@ struct GiphyGif: Codable {
     let images: GiphyImages
     let url : String
     let slug : String
+    let type : String
 }
 
 struct GiphyImages: Codable {

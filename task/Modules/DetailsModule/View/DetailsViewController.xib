@@ -16,6 +16,8 @@
                 <outlet property="gifImageView" destination="5Jn-vL-PwJ" id="B0S-hG-0vk"/>
                 <outlet property="slugLabel" destination="HcD-h7-1E2" id="nd6-cC-Wfv"/>
                 <outlet property="titleLabel" destination="TIx-l1-0nc" id="Xqi-km-jea"/>
+                <outlet property="typeBackgroundView" destination="sds-aU-ZbH" id="67o-eB-Tl8"/>
+                <outlet property="typeLabel" destination="B5t-AF-gh1" id="mIk-r7-kIb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -54,6 +56,24 @@
                     <color key="textColor" name="Grey-500"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sds-aU-ZbH">
+                    <rect key="frame" x="16.000000000000004" y="79" width="43.333333333333343" height="25"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5t-AF-gh1">
+                            <rect key="frame" x="4" y="4" width="35.333333333333336" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.28567976802783512" green="0.28567976802783512" blue="0.28567976802783512" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="B5t-AF-gh1" secondAttribute="bottom" constant="4" id="5MJ-mt-P1a"/>
+                        <constraint firstItem="B5t-AF-gh1" firstAttribute="leading" secondItem="sds-aU-ZbH" secondAttribute="leading" constant="4" id="6op-aw-uQV"/>
+                        <constraint firstAttribute="trailing" secondItem="B5t-AF-gh1" secondAttribute="trailing" constant="4" id="UNh-pI-ulz"/>
+                        <constraint firstItem="B5t-AF-gh1" firstAttribute="top" secondItem="sds-aU-ZbH" secondAttribute="top" constant="4" id="YpC-Na-JyW"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -69,6 +89,8 @@
                 <constraint firstItem="HcD-h7-1E2" firstAttribute="top" secondItem="TIx-l1-0nc" secondAttribute="bottom" constant="8" id="d4l-RP-bzN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TIx-l1-0nc" secondAttribute="trailing" constant="20" id="fUh-ie-aT3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Jn-vL-PwJ" secondAttribute="trailing" constant="8" id="kzb-gX-nJ7"/>
+                <constraint firstItem="sds-aU-ZbH" firstAttribute="top" secondItem="5Jn-vL-PwJ" secondAttribute="top" constant="8" id="oHw-At-jsA"/>
+                <constraint firstItem="sds-aU-ZbH" firstAttribute="leading" secondItem="5Jn-vL-PwJ" secondAttribute="leading" constant="8" id="sih-a1-LgJ"/>
                 <constraint firstItem="Agz-iH-ZOD" firstAttribute="top" secondItem="5Jn-vL-PwJ" secondAttribute="top" constant="8" id="tWF-b3-9yM"/>
             </constraints>
             <point key="canvasLocation" x="140" y="20"/>

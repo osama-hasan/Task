@@ -9,6 +9,8 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
+    @IBOutlet weak var typeBackgroundView: UIView!
+    @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var slugLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var gifImageView: UIImageView!
@@ -29,6 +31,7 @@ class DetailsViewController: UIViewController {
     func setupUI(){
         favoriteButton.layer.cornerRadius = favoriteButton.frame.width / 2
         gifImageView.layer.cornerRadius = 12
+        typeBackgroundView.layer.cornerRadius = 8
     }
     
     
@@ -53,6 +56,7 @@ class DetailsViewController: UIViewController {
             self.titleLabel.text = selected.title
             self.setFavoriteUI()
             self.slugLabel.text = selected.slug
+            self.typeLabel.text = selected.type.uppercased()
         }
     }
     
