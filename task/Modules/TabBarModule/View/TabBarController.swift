@@ -81,14 +81,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
                 vc.title = tap.vcTitle
                 vc.view.backgroundColor =  .white
                 vc.navigationController?.navigationBar.prefersLargeTitles = true
-                vc.navigationController?.navigationItem.largeTitleDisplayMode = .always
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    vc.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 18),
-                                                                                  NSAttributedString.Key.foregroundColor:UIColor.black]
-                    vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.font:UIFont.systemFont(ofSize: 10)], for: .normal)
-                    
-                }
-    
+                vc.navigationController?.navigationItem.largeTitleDisplayMode = .always    
               
                 
                 vc.tabBarItem  = UITabBarItem(title: tap.tabTitle, image:  UIImage(systemName: tap.imageName.img),selectedImage: UIImage(systemName:  tap.imageName.selectedImg))

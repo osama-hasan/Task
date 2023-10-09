@@ -22,6 +22,8 @@ extension UIImageView {
     }
     
     func setKFImage(with resource: Resource?, placeholder: Placeholder? = UIImage(named: "image_place_holder"))  {
-        self.kf.setImage(with: resource,placeholder: placeholder,options: [.processor(DownsamplingImageProcessor(size: CGSize(width: self.frame.size.width * UIScreen.main.scale, height: self.frame.size.height * UIScreen.main.scale)))])
+        self.kf.setImage(with: resource,placeholder: placeholder)
+        
+        
     }
 }

@@ -15,7 +15,7 @@ class Router {
 
     class func ViewController<T:UIViewController>(vc:T.Type) ->T{
         let vc = T(nibName: NSStringFromClass(vc.classForCoder()).components(separatedBy: ".").last ?? "", bundle: nil)
-        vc.modalPresentationStyle = .fullScreen
+      //  vc.modalPresentationStyle = .fullScreen
         return vc
     }
     

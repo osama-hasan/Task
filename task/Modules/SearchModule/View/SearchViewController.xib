@@ -9,9 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="task" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="task" customModuleProvider="target">
             <connections>
-                <outlet property="imagesCollectionView" destination="l7V-Zc-whE" id="O3X-uo-Bd4"/>
+                <outlet property="searchResultCollectionView" destination="8EY-dk-gRf" id="4FN-Qz-pzD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,10 +20,10 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="l7V-Zc-whE">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8EY-dk-gRf">
                     <rect key="frame" x="8" y="59" width="377" height="759"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GUS-MT-1k4">
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wdu-jL-9P6">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -34,12 +34,12 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="l7V-Zc-whE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2Me-oY-0QE"/>
-                <constraint firstItem="l7V-Zc-whE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="8y3-2n-758"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="l7V-Zc-whE" secondAttribute="trailing" constant="8" id="Rk7-As-bne"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="l7V-Zc-whE" secondAttribute="bottom" id="p8l-hw-jL6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8EY-dk-gRf" secondAttribute="trailing" constant="8" id="2Nj-7G-5BF"/>
+                <constraint firstItem="8EY-dk-gRf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ET2-DC-iAM"/>
+                <constraint firstItem="8EY-dk-gRf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="cSP-sh-ykZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="8EY-dk-gRf" secondAttribute="bottom" id="ljw-M7-inK"/>
             </constraints>
-            <point key="canvasLocation" x="48" y="21"/>
+            <point key="canvasLocation" x="79" y="20"/>
         </view>
     </objects>
     <resources>

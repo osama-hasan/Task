@@ -32,26 +32,26 @@ class LoginViewModel : NSObject {
             onUserLogin?(false,errorMessage)
             return
         }
-      
+        
         if !password.isPasswordValid{
             errorMessage = "Password should be more than 8 characters"
             onUserLogin?(false,errorMessage)
             return
         }
-        DispatchQueue.main.async {
-            DataSource.shared.login(username: self.emailAddress, password: self.password){ [weak self] isSuccess in
-                guard let self  else {return}
-                if isSuccess {
-                    UserDefaultsManager.shared.email = emailAddress
-                    self.onUserLogin?(isSuccess,errorMessage)
-                    return
-                }
-                errorMessage = "Email or pasword is wrong!"
+        Loader.show()
+        DataSource.shared.login(username: self.emailAddress, password: self.password){ [weak self] isSuccess in
+            Loader.hide()
+            guard let self  else {return}
+            if isSuccess {
+                UserDefaultsManager.shared.email = emailAddress
                 self.onUserLogin?(isSuccess,errorMessage)
+                return
             }
+            errorMessage = "Email or pasword is wrong!"
+            self.onUserLogin?(isSuccess,errorMessage)
         }
-
-
+        
+        
     }
     
 }

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        KingfisherManager.shared.cache.memoryStorage.config.totalCostLimit = 100 * 1024 * 1024 // 100 MB
+
         window = UIWindow(frame: UIScreen.main.bounds)
         if UserDefaultsManager.shared.email.isEmpty {
             Router.showLogin(for: window!)

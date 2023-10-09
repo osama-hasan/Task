@@ -8,12 +8,6 @@
 import Foundation
 
 final class DataSource: DataSourceProtocol{
-   
-    
-   
-    
-   
-    
     
    
     //MARK: - Initializers
@@ -41,8 +35,8 @@ final class DataSource: DataSourceProtocol{
         localDataSource.getFavoritesForUser(username: username,completion: completion)
     }
     
-    func addFavoriteForUser(username: String, id: String, title: String, url: String) {
-        localDataSource.addFavoriteForUser(username: username, id: id, title: title, url: url)
+    func addFavoriteForUser(username: String, id: String, title: String, url: String, originalUrl: String) {
+        localDataSource.addFavoriteForUser(username: username, id: id, title: title, url: url,originalUrl: originalUrl)
     }
     
     func removeFromFavorites(id: String, username: String) {
@@ -61,4 +55,9 @@ final class DataSource: DataSourceProtocol{
     func observeFavorites(forUser username: String, completion: @escaping ([Favorite]) -> Void){
         localDataSource.observeFavorites(forUser: username, completion: completion)
     }
+    
+    func getById(id: String, completion: @escaping Handler<GiphySingleResponse>) {
+        remoteDataSource.getById(id: id, completion: completion)
+    }
+    
 }

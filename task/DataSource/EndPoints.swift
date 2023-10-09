@@ -7,7 +7,22 @@
 
 import Foundation
 
-enum EndPoints:String{
-    case search = "/search"
-    case trending = "/trending"
+enum EndPoints{
+    case search
+    case trending
+    case getById(id:String)
+}
+
+extension EndPoints {
+    func getEndPoint()->String{
+        switch self {
+            
+        case .search:
+            return "/search"
+        case .trending:
+            return "/trending"
+        case .getById(id: let id):
+            return "/\(id)"
+        }
+    }
 }

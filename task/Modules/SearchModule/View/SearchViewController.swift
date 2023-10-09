@@ -1,74 +1,60 @@
 //
-//  FavouriteViewController.swift
+//  SearchViewController.swift
 //  task
 //
-//  Created by Osama Walid on 08/10/2023.
+//  Created by Osama Hasan on 09/10/2023.
 //
 
 import UIKit
 
-class FavouriteViewController: UIViewController {
+class SearchViewController: UIViewController {
 
-    @IBOutlet weak var favourtieCollectionView: UICollectionView!
-    let viewModel = FavouriteViewModel()
+    @IBOutlet weak var searchResultCollectionView: UICollectionView!
+    
+    let viewModel = SearchViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Do any additional setup after loading the view.
         registerCells()
-        
-        setupViews()
-        
-      
-    }
-
-
-    override func viewWillAppear(_ animated: Bool) {
-        
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationItem.largeTitleDisplayMode = .always
-        
-    }
-    
-    func setupViews(){
-        favourtieCollectionView.dataSource = self
-        favourtieCollectionView.delegate = self
         viewModelListeners()
     }
+
+
     
     func registerCells(){
-        favourtieCollectionView.register(cellClass: GiphyCell.self)
+        searchResultCollectionView.register(cellClass: GiphyCell.self)
+        searchResultCollectionView.delegate = self
+        searchResultCollectionView.dataSource = self
     }
-    
     
     
     func viewModelListeners(){
-        viewModel.observeOnUserFaorite()
-        
         viewModel.onLoadData = { [weak self] in
-            guard let self else {return}
             DispatchQueue.main.async{
-                self.favourtieCollectionView.reloadData()
-                self.tabBarItem.badgeValue = "\(self.viewModel.userFavourites.count)"
+                self?.searchResultCollectionView.reloadData()
             }
         }
     }
 
 }
 
-extension FavouriteViewController : UICollectionViewDelegate , UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+
+extension SearchViewController : UICollectionViewDelegate , UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.userFavourites.count
+        return viewModel.searchResult.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withClass: GiphyCell.self, for: indexPath)
-        let cellData = viewModel.userFavourites[indexPath.row]
+        let cellData = viewModel.searchResult[indexPath.row]
 
-        cell.setData(data: cellData)
+        let isFavorite = viewModel.isItemInFavourite(index: indexPath.row)
+        cell.setData(data: cellData,isFavorite: isFavorite)
         cell.onSelectFavourite = { [weak self] in
             guard let self else {return}
-            self.viewModel.removeFromFavorites(index: indexPath.row)
+            self.viewModel.toggelFavourite(index: indexPath.row)
         }
      
         return cell
@@ -84,12 +70,12 @@ extension FavouriteViewController : UICollectionViewDelegate , UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let item = viewModel.userFavourites[indexPath.row]
+        let item = viewModel.searchResult[indexPath.row]
         
         let viewController = Router.ViewController(vc: DetailsViewController.self)
-        viewController.viewModel.selectedId = item.favId
+        viewController.viewModel.selectedId = item.id
         viewController.viewModel.isFavorite = true
-        self.navigationController?.pushViewController(viewController, animated: true)
+        self.present(viewController, animated: true)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

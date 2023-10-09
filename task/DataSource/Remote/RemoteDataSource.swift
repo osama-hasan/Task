@@ -12,6 +12,10 @@ import CoreLocation
 class RemoteDataSource:RemoteDataSourceProtocol{
     
     
+    
+    
+    
+    
     //MARK: - Properties
     lazy var remoteContext = NetworkManager(baseUrl: "https://api.giphy.com/v1/gifs")
     
@@ -61,6 +65,20 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         }
     }
     
+    
+    func getById(id: String, completion: @escaping Handler<GiphySingleResponse>) {
+        
+        let params : [String : Any] =  ["api_key":giphyApiKey,"rating":"g"]
+        
+        remoteContext.request(endpoint: EndPoints.getById(id: id), method: .get,parameters: params) { result in
+            switch result {
+            case .success(let data):
+                self.dataParamParser(data: data, model: GiphySingleResponse.self, completion: completion)
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 
     
 }

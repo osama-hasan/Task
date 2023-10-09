@@ -10,14 +10,20 @@ struct GiphyResponse: Codable {
     let data: [GiphyGif]
 }
 
+struct GiphySingleResponse: Codable {
+    let data: GiphyGif
+}
 struct GiphyGif: Codable {
     let id: String
     let title: String
     let images: GiphyImages
+    let url : String
+    let slug : String
 }
 
 struct GiphyImages: Codable {
     let original: GiphyImage
+    let fixedWidthDownsampled: GiphyImage
 }
 
 struct GiphyImage: Codable {

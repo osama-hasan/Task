@@ -20,7 +20,7 @@ class NetworkManager {
 
 
     func request(endpoint: EndPoints, method: HTTPMethod, parameters: Parameters? = nil, headers: HTTPHeaders? = nil, completion: @escaping Handler<Data>) {
-        let url = baseURL + endpoint.rawValue
+        let url = baseURL + endpoint.getEndPoint()
 
         AF.request(url, method: method, parameters: parameters, headers: headers)
             .validate(statusCode: 200..<300)

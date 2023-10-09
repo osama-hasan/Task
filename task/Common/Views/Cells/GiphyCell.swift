@@ -28,7 +28,7 @@ class GiphyCell: UICollectionViewCell {
     
     func setData(data:GiphyGif,isFavorite:Bool){
         imageTitleLabel.text = data.title
-        if let url = URL(string: data.images.original.url){
+        if let url = URL(string: data.images.fixedWidthDownsampled.url){
             imageView.setKFImage(with: url)
         }
         
@@ -60,5 +60,12 @@ class GiphyCell: UICollectionViewCell {
         
         favouriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         favouriteButton.tintColor = .red
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.stopAnimating()
+        imageView.animationImages = nil
+        imageView.image = nil
     }
 }
